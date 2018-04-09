@@ -70,7 +70,7 @@ class Register extends Component {
         <MuiThemeProvider>
           <div>
           <AppBar
-             title="Register"
+             title="Register in League Of Stones"
            />
            <TextField
              hintText="Enter your First Name"
