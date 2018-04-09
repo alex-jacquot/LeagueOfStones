@@ -9,10 +9,10 @@
 
   npm install 
 
-#UPDATING - INTEGRATING RUNNING_APP
+RUNNING_APP
 
   npm run start
 
-#UPDATING - INTEGRATING - BUILDING_APP
+BUILDING_APP
 
   npm run build 
