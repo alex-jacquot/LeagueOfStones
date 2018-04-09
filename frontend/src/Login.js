@@ -84,7 +84,7 @@ class Login extends Component {
         </MuiThemeProvider>
         <MuiThemeProvider>
           <div>
-            <p>Login</p>
+            <p>Hi ! You Have To Log in For Play</p>
           </div>
         </MuiThemeProvider>
         {this.state.loginComponent}
