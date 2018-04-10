@@ -20,7 +20,7 @@ class Register extends Component {
     console.log("nextProps",nextProps);
   }
   handleClick(event){
-    var apiBaseUrl = "http://localhost:4000/api/";
+    var apiBaseUrl = "http://localhost:8080";
     // console.log("values in register handler");
     var self = this;
     //To be done:check for empty values before hitting submit
@@ -28,14 +28,14 @@ class Register extends Component {
       var payload={
       "first_name": this.state.first_name,
       "last_name":this.state.last_name,
-      "userid":this.state.email,
+      "email":this.state.email,
       "password":this.state.password,
       }
-      axios.post(apiBaseUrl+'/register', payload)
+      axios.get(apiBaseUrl+'/users/subscribe?email='+payload.email+'&name='+payload.last_name+'&password='+payload.password)
      .then(function (response) {
        console.log(response);
-       if(response.data.code === 200){
-        //  console.log("registration successfull");
+       if(response.data.status === "ok"){
+         console.log("registration successfull");
          var loginscreen=[];
          loginscreen.push(<Login parentContext={this} appContext={self.props.appContext}/>);
          var loginmessage = "Not Registered yet.Go to registration";
@@ -61,8 +61,8 @@ class Register extends Component {
   render() {
     // console.log("props",this.props);
     var userhintText,userLabel;
-    userhintText="Enter your Pseudo",
-    userLabel="Pseudo Game"
+    userhintText="Enter your Email",
+    userLabel="Email Game"
     
     
     return (
